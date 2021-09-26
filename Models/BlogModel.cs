@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogProject.Models
 {
-    public class BlogModel
+    public class BlogModel 
     {
         public int Id { get; set; } // Primary Key for the blog
         public string AuthorId { get; set; } // Blog Author, Foreign Key for this class becomes the Primary
@@ -49,5 +50,7 @@ namespace MyBlogProject.Models
         // Navigation Properties will be added later after building out the 
         // other models.
 
+        public virtual IdentityUser Author { get; set; }
+        public virtual ICollection<BlogPostModel> Posts { get; set; } = new HashSet<BlogPostModel>();
     }
 }
