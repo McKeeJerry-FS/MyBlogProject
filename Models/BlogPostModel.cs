@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using MyBlogProject.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -36,7 +37,10 @@ namespace MyBlogProject.Models
         [Display(Name = "Created Date: ")]
         public DateTime? PostUpdated { get; set; }
 
-        public bool IsReady { get; set; }
+        
+        // public bool IsReady { get; set; }
+        public ReadyStatus ReadyStatus { get; set; }
+
 
         public string Slug { get; set; }
 
@@ -52,6 +56,10 @@ namespace MyBlogProject.Models
         public virtual IdentityUser Author { get; set; }
 
         public virtual ICollection<BlogTagModel> Tags { get; set; } = new HashSet<BlogTagModel>();
+        public virtual ICollection<BlogCommentModel> Comments { get; set; } = new HashSet<BlogCommentModel>();
+        
 
+
+    
     }
 }

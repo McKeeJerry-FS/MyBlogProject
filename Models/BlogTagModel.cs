@@ -21,5 +21,7 @@ namespace MyBlogProject.Models
         public virtual BlogPostModel Post { get; set; }
         public virtual IdentityUser Author { get; set; }
 
+
+
     }
 }
