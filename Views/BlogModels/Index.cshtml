@@ -4,10 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Blogs</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <!-- This link takes the user to the Create Action to create a blog -->
+    <a asp-action="Create">Create a New Blog</a>
 </p>
 <table class="table">
     <thead>
@@ -37,33 +38,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var blog in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BlogName)
+                @Html.DisplayFor(modelItem => blog.BlogName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => blog.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BlogCreated)
+                @Html.DisplayFor(modelItem => blog.BlogCreated)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BlogUpdated)
+                @Html.DisplayFor(modelItem => blog.BlogUpdated)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageData)
+                @Html.DisplayFor(modelItem => blog.ImageData)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContentType)
+                @Html.DisplayFor(modelItem => blog.ContentType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BlogUser.Id)
+                @Html.DisplayFor(modelItem => blog.BlogUser.Id)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@blog.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@blog.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@blog.Id">Delete</a>
             </td>
         </tr>
 }

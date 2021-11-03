@@ -16,6 +16,7 @@ namespace MyBlogProject.Models
                                              // for another
 
         [Required] // means that a name for the blog is required
+        [Display(Name = "Name: ")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)] // This is a Data Annotation to specific the maximum length, an Error Message and a minimum character length
         public string BlogName { get; set; } // The name of the blog
         [Required] // means that a name for the blog is required
@@ -50,6 +51,7 @@ namespace MyBlogProject.Models
         // Navigation Properties will be added later after building out the 
         // other models.
 
+        [Display(Name = "Author")]
         public virtual BlogUser BlogUser { get; set; }
         public virtual ICollection<BlogPostModel> Posts { get; set; } = new HashSet<BlogPostModel>();
     }
