@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MyBlogProject.Models.BlogPostModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tech Blog Posts Index";
 }
 
-<h1>Index</h1>
+<h1>TechBlog Post Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Post</a>
 </p>
 <table class="table">
     <thead>
@@ -19,75 +19,34 @@
                 @Html.DisplayNameFor(model => model.Abstract)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PostContent)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.PostCreated)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PostUpdated)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.ReadyStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Slug)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageData)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContentType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Blog)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BlogUser)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var post in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => post.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Abstract)
+                @Html.DisplayFor(modelItem => post.Abstract)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PostContent)
+                @Html.DisplayFor(modelItem => post.PostCreated)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PostCreated)
+                @Html.DisplayFor(modelItem => post.ReadyStatus)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.PostUpdated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReadyStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Slug)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageData)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Blog.BlogName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BlogUser.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@post.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@post.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@post.Id">Delete</a>
             </td>
         </tr>
 }
