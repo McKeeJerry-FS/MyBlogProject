@@ -1,0 +1,75 @@
+﻿@model MyBlogProject.Models.BlogCommentModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BlogCommentModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PostId" class="control-label"></label>
+                <select asp-for="PostId" class ="form-control" asp-items="ViewBag.PostId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogUserId" class="control-label"></label>
+                <select asp-for="BlogUserId" class ="form-control" asp-items="ViewBag.BlogUserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModeratorId" class="control-label"></label>
+                <select asp-for="ModeratorId" class ="form-control" asp-items="ViewBag.ModeratorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentCreated" class="control-label"></label>
+                <input asp-for="CommentCreated" class="form-control" />
+                <span asp-validation-for="CommentCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentUpdate" class="control-label"></label>
+                <input asp-for="CommentUpdate" class="form-control" />
+                <span asp-validation-for="CommentUpdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentModerated" class="control-label"></label>
+                <input asp-for="CommentModerated" class="form-control" />
+                <span asp-validation-for="CommentModerated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentDeleted" class="control-label"></label>
+                <input asp-for="CommentDeleted" class="form-control" />
+                <span asp-validation-for="CommentDeleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentModeratedBody" class="control-label"></label>
+                <input asp-for="CommentModeratedBody" class="form-control" />
+                <span asp-validation-for="CommentModeratedBody" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModerationType" class="control-label"></label>
+                <select asp-for="ModerationType" class="form-control"></select>
+                <span asp-validation-for="ModerationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
