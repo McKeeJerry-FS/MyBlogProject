@@ -453,3 +453,8 @@ C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogPostMo
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogPostModels\Details.cshtml.g.cs
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogPostModels\Edit.cshtml.g.cs
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogPostModels\Index.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogTagModels\Create.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogTagModels\Delete.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogTagModels\Details.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogTagModels\Edit.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\BlogTagModels\Index.cshtml.g.cs
