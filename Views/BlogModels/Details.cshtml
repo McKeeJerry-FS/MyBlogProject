@@ -1,13 +1,13 @@
 ﻿@model MyBlogProject.Models.BlogModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Blog Details - TechBlog";
 }
 
-<h1>Details</h1>
+<h1>Blog Details</h1>
 
 <div>
-    <h4>BlogModel</h4>
+    <h4>TechBlog</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -29,29 +29,12 @@
             @Html.DisplayFor(model => model.BlogCreated)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BlogUpdated)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BlogUpdated)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageData)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageData)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ContentType)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ContentType)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BlogUser)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BlogUser.Id)
-        </dd>
+        
     </dl>
 </div>
 <div>

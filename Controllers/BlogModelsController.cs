@@ -82,7 +82,6 @@ namespace MyBlogProject.Controllers
             {
                 return NotFound();
             }
-            ViewData["BlogUserId"] = new SelectList(_context.Users, "Id", "Id", blogModel.BlogUserId);
             return View(blogModel);
         }
 
@@ -91,7 +90,7 @@ namespace MyBlogProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,BlogUserId,BlogName,Description,BlogCreated,BlogUpdated,ImageData,ContentType")] BlogModel blogModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,BlogName,Description,Image")] BlogModel blogModel)
         {
             if (id != blogModel.Id)
             {
