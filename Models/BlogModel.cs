@@ -12,7 +12,7 @@ namespace MyBlogProject.Models
     public class BlogModel 
     {
         public int Id { get; set; } // Primary Key for the blog
-        public string AuthorId { get; set; } // Blog Author, Foreign Key for this class becomes the Primary
+        public string BlogUserId { get; set; } // Blog Author, Foreign Key for this class becomes the Primary
                                              // for another
 
         [Required] // means that a name for the blog is required
@@ -50,7 +50,7 @@ namespace MyBlogProject.Models
         // Navigation Properties will be added later after building out the 
         // other models.
 
-        public virtual IdentityUser Author { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
         public virtual ICollection<BlogPostModel> Posts { get; set; } = new HashSet<BlogPostModel>();
     }
 }

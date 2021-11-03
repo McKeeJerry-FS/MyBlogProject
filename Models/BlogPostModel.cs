@@ -17,7 +17,7 @@ namespace MyBlogProject.Models
     {
         public int Id { get; set; }
         public int BlogId { get; set; }
-        public string AuthorId { get; set; }
+        public string BlogUserId { get; set; }
 
         [Required]
         [StringLength(75, ErrorMessage = "The {o} must be at least {2} and no more than {1} characters long.", MinimumLength = 2)]
@@ -53,7 +53,7 @@ namespace MyBlogProject.Models
 
         // Navigation Properties
         public virtual BlogModel Blog { get; set; }
-        public virtual IdentityUser Author { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
 
         public virtual ICollection<BlogTagModel> Tags { get; set; } = new HashSet<BlogTagModel>();
         public virtual ICollection<BlogCommentModel> Comments { get; set; } = new HashSet<BlogCommentModel>();

@@ -38,7 +38,8 @@ namespace MyBlogProject.Models
             }
         }
 
-
+        public virtual ICollection<BlogModel> Blogs { get; set; } = new HashSet<BlogModel>();
+        public virtual ICollection<BlogPostModel> BlogPosts { get; set; } = new HashSet<BlogPostModel>();
 
     }
 }

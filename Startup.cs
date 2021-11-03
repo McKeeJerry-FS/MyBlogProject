@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyBlogProject.Data;
+using MyBlogProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,13 +28,24 @@ namespace MyBlogProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Built-in SQL Server settings
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //options.UseSqlServer(
+            //Configuration.GetConnectionString("DefaultConnection")));
+            
+
+            // This change in the DbContext switches Databases in Visual Studio so that the
+            // program now utilizes PostgreSQL instead of SQL Server (which is built in)
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+               options.UseNpgsql(
+                   Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //.AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<BlogUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+               .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
 

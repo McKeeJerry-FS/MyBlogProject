@@ -13,7 +13,7 @@ namespace MyBlogProject.Models
 
         public int Id { get; set; }
         public int PostId { get; set; }
-        public string AuthorId { get; set; }
+        public string BlogUserId { get; set; }
         public string ModeratorId { get; set; }
 
         [Required]
@@ -34,8 +34,8 @@ namespace MyBlogProject.Models
 
         // Navigation Properties
         public virtual BlogPostModel Post { get; set; }
-        public virtual IdentityUser Author { get; set; }
-        public virtual IdentityUser Moderator { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
+        public virtual BlogUser Moderator { get; set; }
         
 
 
