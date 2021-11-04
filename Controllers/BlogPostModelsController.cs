@@ -59,7 +59,7 @@ namespace MyBlogProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,BlogId,BlogUserId,Title,Abstract,PostContent,PostCreated,PostUpdated,ReadyStatus,Slug,ImageData,ContentType")] BlogPostModel blogPostModel)
+        public async Task<IActionResult> Create([Bind("BlogId,PostContent,ReadyStatus,Image")] BlogPostModel blogPostModel)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,6 @@ namespace MyBlogProject.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "BlogName", blogPostModel.BlogId);
-            ViewData["BlogUserId"] = new SelectList(_context.Users, "Id", "Id", blogPostModel.BlogUserId);
             return View(blogPostModel);
         }
 
