@@ -497,3 +497,5 @@ C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\ref\MyBlogProject.dll
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\MyBlogProject.pdb
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\MyBlogProject.genruntimeconfig.cache
 C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\MyBlogProject.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\USER\source\repos\MyBlogProject\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
